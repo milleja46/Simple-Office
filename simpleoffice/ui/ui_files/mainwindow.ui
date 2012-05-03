@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>632</height>
+    <height>600</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -20,25 +20,49 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>-1</x>
       <y>0</y>
       <width>801</width>
       <height>561</height>
      </rect>
     </property>
-    <widget class="QWidget" name="tab">
-     <attribute name="title">
-      <string>Tab 1</string>
-     </attribute>
-    </widget>
-    <widget class="QWidget" name="tab_2">
-     <attribute name="title">
-      <string>Tab 2</string>
-     </attribute>
-    </widget>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QTabWidget" name="tabWidget">
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="tab">
+        <attribute name="title">
+         <string>Tab 1</string>
+        </attribute>
+        <widget class="QWebView" name="webView">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>791</width>
+           <height>511</height>
+          </rect>
+         </property>
+         <property name="url">
+          <url>
+           <string>file:///C:/Users/Joshua/Documents/python/SimpleOffice/simpleoffice/start.html</string>
+          </url>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="tab_2">
+        <attribute name="title">
+         <string>Tab 2</string>
+        </attribute>
+       </widget>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -58,14 +82,7 @@
      <property name="title">
       <string>New</string>
      </property>
-     <widget class="QMenu" name="menuSimple_Math">
-      <property name="title">
-       <string>Simple:Math Sheet</string>
-      </property>
-     </widget>
-     <addaction name="actionSimple_Word_Doc"/>
-     <addaction name="actionSimple_Prez_Presentation"/>
-     <addaction name="menuSimple_Math"/>
+     <addaction name="actionNew_SimpleDoc"/>
     </widget>
     <addaction name="actionOpen"/>
     <addaction name="menuNew"/>
@@ -89,6 +106,8 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionNew"/>
+   <addaction name="actionOpen"/>
    <addaction name="separator"/>
   </widget>
   <action name="actionOpen">
@@ -96,22 +115,30 @@
     <string>Open</string>
    </property>
   </action>
-  <action name="actionSimple_Word_Doc">
+  <action name="actionNew">
    <property name="text">
-    <string>Simple:Word Doc</string>
+    <string>New</string>
+   </property>
+   <property name="toolTip">
+    <string>Create a new document</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
    </property>
   </action>
-  <action name="actionSimple_Prez_Presentation">
+  <action name="actionNew_SimpleDoc">
    <property name="text">
-    <string>Simple:Prez Presentation</string>
-   </property>
-  </action>
-  <action name="actionSheet">
-   <property name="text">
-    <string>Sheet</string>
+    <string>New Simple:WordDoc</string>
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKit/QWebView</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

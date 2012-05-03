@@ -9,14 +9,15 @@
 ###############################################################################
 import sys
 from PySide.QtCore import *
-from PySide.QtCore import *
-from SimpleOffice.simpleoffice.ui.simpleword_ui.Ui_Form import *
+from PySide.QtGui import *
+from ui.simpleword_ui import *
 
 
 class widget(QWidget):
     """
     sets up the ui for the widget and makes connections to various buttons.
     """
+
     def __init__(self):
         pass
 
